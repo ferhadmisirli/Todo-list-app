@@ -1,0 +1,23 @@
+.col-center-block {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    /* margin-left: auto; margin-right: auto; */
+}
+.deleteButton{
+	position: relative;
+
+}
+.list-group-item{
+	font-size: 24px;
+}
+.txt-title{
+	margin-left: 20px;
+}
+.list-group{
+	margin-bottom: 0px;
+}
+.footer{
+	padding: 10px;
+}
