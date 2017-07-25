@@ -1,0 +1,40 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <script src="https://use.fontawesome.com/a69be8a116.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body ng-app="myApp" ng-controller = "add-cntr">
+    <div class="container-fluid pagination-centered">
+        <div class="row">
+            <div class=" col-sm-4 col-center-block ">
+                <form id="todo-form" ng-submit="addNewItem()">
+                    <input type="text" class="form-control input-lg" ng-model='newItem' placeholder="Enter Todo List">
+                </form>
+                <ul class="list-group" >
+                  <li class="list-group-item" ng-repeat ="i in listItems track by $index">
+                    <div class="checkbox">
+                      <label><input style="width: 20px; height: 20px; margin-top: 6px;" type="checkbox" data-ng-model = "i.done" value=""><span class="txt-title">{{i.title}}</span>
+                        <span class="pull-right " ng-click = "deleteItem($index)"><i class="fa fa-times"></i></span>
+                      </label>           
+                    </div>
+                  </li>
+                </ul>
+                <footer class="footer">
+                    <span class="badge">{{listItems.length}}</span> Items in your list
+                    <span class="pull-right " ng-click="deleteItemByCheck()"><a href="">Clear selected</a></span>
+                </footer>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
